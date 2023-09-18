@@ -1,0 +1,54 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.pbo_pertemuan3_metode_rerata;
+
+/**
+ *
+ * @author ASUS
+ */
+/*
+Buat program untuk menghitung rata-rata nilai yang dimasukan oleh user secara bebas,
+contoh:
+
+Masukan bilangan : 3
+Ingin memasukkan bilangan lagi? [y/t] y
+Masukan bilangan : 3
+Ingin memasukkan bilangan lagi? [y/t] y
+Masukan bilangan : 3
+Ingin memasukkan bilangan lagi? [y/t] y
+Masukan bilangan : 3
+Ingin memasukkan bilangan lagi? [y/t] t
+
+nilai rata rata dari bilangan yang diinput adalah 3
+*/
+import java.util.Scanner;
+public class PBO_PERTEMUAN3_METODE_RERATA {
+     static int i = 0;
+    static double total() {
+        Scanner sc = new Scanner(System.in);
+        double bilangan;
+        double total = 0;
+        char jwb = 'y'; //inisialisasi
+        double rata2 = 0;
+        int i = 0;
+        while (jwb == 'y') {
+            i++;
+            System.out.print("Masukkan bilangan: ");
+            bilangan = sc.nextDouble();
+            total = total + bilangan;
+            System.out.print("Ingin memasukkan bilangan lagi? [y/t] ");
+            jwb = sc.next().charAt(0);
+        }
+        return total;
+    }
+    static double rerata(double nilaiTotal, int jmlData)  {
+        return nilaiTotal / jmlData;
+    }
+    public static void main(String[ ] args) {
+        double t = total();
+        System.out.println("Nilai total data = " + t);
+        System.out.println("Nilai rerata data = " + rerata(t,i));
+    }
+}
